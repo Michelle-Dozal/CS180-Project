@@ -14,7 +14,7 @@ Terry Jung: tjung006@ucr.edu
 
 ## Me (Michelle Dozal) Personally
 
-This project introduced me to a lot of different tools I hadn't worked before and also allowed me to work on my front-end skills and become more confident with them. Before this project I had not worked with more than 2 people on a project so it was a new experience to work with double that and somehow manage to meet up/discuss/work on the project together. Thus, following the Scrum process helped us a lot allowing us to have a set time to discuuss, plan, and execute. I personally worked the most on Front-end development team for the project and tended to focus on that. Allowed me to get more exposed to javascript and flask which I had little experience with.Overall, this project had it's challenges but very proud of what my group and I were able to put out.
+This project introduced me to a lot of different tools I hadn't worked before and also allowed me to work on my front-end skills and become more confident with them. Before this project I had not worked with more than 2 people on a project so it was a new experience to work with double that and somehow manage to meet up/discuss/work on the project together. Thus, following the Scrum process helped us a lot allowing us to have a set time to discuuss, plan, and execute. I personally worked the most on Front-end side for the project and tended to focus on that. This project allowed me to get more exposed to javascript and flask which I had little experience with.Overall, this project had it's challenges but very proud of what my group and I were able to put out.
 
 
 ## General
@@ -46,13 +46,12 @@ The data set is
 
 ## Feature List 
 * Layout/site
-* Search Bar
+* Search Bar to search CSV files by diff. categories
 * Ratings
 * Comment Interactions
 * Recipe Saving 
-* Have Search History 
 * Have a Saved Recipes Option
-* Multiple Analytics 
+* Multiple Analytics of the CSV data 
 >Preview of some of the Analytics
 <img width="400" alt="Screen Shot 2020-12-08 at 3 43 54 PM" src="https://user-images.githubusercontent.com/62925991/101559664-7104db80-3976-11eb-9506-8d90f4e7323d.png">
 <img width="400" alt="Screen Shot 2020-12-08 at 3 44 11 PM" src="https://user-images.githubusercontent.com/62925991/101559672-76622600-3976-11eb-91c8-0ff2adeb7134.png">
