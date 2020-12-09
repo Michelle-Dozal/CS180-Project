@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <style>
+        .button {
+            background-color: #008CBA;
+            border: none;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+    
+        .button1 {
+            background-color: white;
+            color: #008BCA;
+            border: 1px solid #008CBA;
+        }
+    
+        .button1:hover {
+            background-color: #008CBA;
+            color: white;
+        }
+    
+        body {
+            font-family: "Lato", sans-serif;
+            text-align:center;
+            color: white;
+        }
+
+        body 
+      {
+        background-image: url("https://images.creativemarket.com/0.1.0/ps/7358706/1820/1213/m1/fpnw/wm1/r4ejcddlzrzpyfjdouhnnkfgfjrjuy4xyhhcnkuxt3m6rh05n4fnjqlf92qwdpkn-.jpg?1574658759&s=bdcb7212acfc1980a7cfee59581e102a");
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+      }
+
+
+        .mySlides {
+            display: none
+        }
+    
+        h1 {
+            color: white;
+            font-size: xx-large;
+        }
+        
+        
+        .navigation {
+            background-color: black;
+            overflow: hidden;
+        }
+        
+                
+       .navigation a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 20px 12px;
+            text-decoration: none;
+            font-size: 15px;
+        }
+    
+        .menu {
+             float:left;
+             overflow:hidden;
+         }
+    
+         .menu .dropmenu {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+         }
+    
+         .menu-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+         }
+    
+         .menu-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+         }
+    
+         .menu:hover .menu-content {
+            display: block;
+            
+         }
+    
+         .menu:hover .dropmenu {
+            background-color: red;
+         } 
+         
+        
+        
+    .navigation a:hover {
+    background-color: white;
+    color: black;
+    }
+    
+    </style>
+
+    <head>
+  
+        <!-- <this is the dropdown menu> -->
+            <div class="navigation">
+      
+                <div class="menu">
+                    <button class="dropmenu">Menu
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="menu-content">
+                        <a href="http://localhost:5000/"></html>Home</a>
+                        <!--<a href="./top_recipes.html">Top Recipes</a>
+                        <a href="./under100cal.html">Under 100 Cal</a>
+                        <a href="./searchhistory.html">Search History</a>-->
+                        <a href="http://localhost:5000/savedrecipes/">Saved Recipes</a>
+                        <a href="http://localhost:5000/update/">Make an Update</a>
+                        <a href="http://localhost:5000/results1/">Analytic 1</a>
+                        <a href="http://localhost:5000/results2/">Analytic 2</a>
+                        <a href="http://localhost:5000/results3/">Analytic 3</a>
+                        <a href="http://localhost:5000/results4/">Analytic 4</a>
+                        <a href="http://localhost:5000/results5/">Analytic 5</a>
+                        <a href="http://localhost:5000/results6/">Analytic 6</a>
+                    </div>
+            
+                </div>
+              </div>
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+
+
+
+    <body>
+        
+
+
+        <h1>UPDATE RECIPE INTERACTION:</h1>
+ 
+        <!--This is for updating a value -->
+        <form action="/updateRow" method="post">
+            <label>Update: </label>
+            <!--<input type="text" placeholder="input the row number..." name="rowNum"/>-->
+            <input type="text" placeholder="input the user id..." name="userid"/>
+            <input type="text" placeholder="input new rating..." name="newVal"/>
+            <input type="submit" name="form" value="Update" />
+        </form>
+
+        <p>Rating changed to: <i>{{ updateValue }}</i></p>
+
+
+        <br />
+        <h1>ADD RECIPE INTERACTION:</h1>
+        <!--This is for appending a row-->
+        <form action="/appendRow" method="post">
+            <label>Add: </label>
+            <input type="text" placeholder="input the user id..." name="user_id"/>
+            <input type="text" placeholder="input the recipe id..." name="rec_id"/>
+            <input type="text" placeholder="input date (xxxx-xx-xx)..." name="date"/>
+            <input type="text" placeholder="input the rating..." name="rating"/>
+            <input type="text" placeholder="input u..." name="u_"/>
+            <input type="text" placeholder="input the i..." name="i_"/>
+            <input type="submit" name="form" value="Add" />
+        </form>
+        <p>Date added: <i>{{ appendValue }}</i></p>
+
+
+        <br />
+        <h1>DELETE RECIPE INTERACTION:</h1>
+        <!--this is for deleting a row-->
+        <form action="/deleteRow" method="post">
+            <label>Delete: </label>
+            <input type="text" placeholder="input the user id..." name="user_id"/>
+            <input type="submit" name="form" value="Delete" />
+        </form>
+        <p>User ID that was deleted: <i>{{ deleteValue }}</i></p>
+
+
+    </body>
+</html>

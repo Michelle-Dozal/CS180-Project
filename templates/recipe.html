@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+    <head>
+  
+        <!-- <this is the dropdown menu> -->
+        <div class="navigation">
+      
+          <div class="menu">
+              <button class="dropmenu">Menu
+                  <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="menu-content">
+                  <a href="http://localhost:5000/"></html>Home</a>
+                  <a href="http://localhost:5000/savedrecipes/">Saved Recipes</a>
+                  <a href="http://localhost:5000/update/">Make an Update</a>
+                  <a href="http://localhost:5000/results1/">Analytic 1</a>
+                  <a href="http://localhost:5000/results2/">Analytic 2</a>
+                  <a href="http://localhost:5000/results3/">Analytic 3</a>
+                  <a href="http://localhost:5000/results4/">Analytic 4</a>
+                  <a href="http://localhost:5000/results5/">Analytic 5</a>
+                  <a href="http://localhost:5000/results6/">Analytic 6</a>
+              </div>
+      
+          </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          
+      </head>
+
+    <style>
+        .button {
+            background-color: #008CBA;
+            border: none;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+    
+        .button1 {
+            background-color: white;
+            color: #008BCA;
+            border: 1px solid #008CBA;
+        }
+    
+        .button1:hover {
+            background-color: #008CBA;
+            color: white;
+        }
+    
+        body {
+            font-family: "Lato", sans-serif;
+            text-align:center;
+            color:azure;
+        }
+
+        body 
+      {
+        background-image: url("https://www.flavorofindia.com/wp-content/uploads/2014/07/photodune-6761938-food-background-on-dark-slate-m1-1024x1024.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+      }
+        
+        .mySlides {
+            display: none
+        }
+    
+        h1 {
+            color: gold;
+            font-size: xx-large;
+            font-family:cursive;
+        }
+
+        h3 {
+            color: gold;
+          
+        }
+
+        .navigation {
+            background-color: black;
+            overflow: hidden;
+        }
+        
+                
+       .navigation a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 20px 12px;
+            text-decoration: none;
+            font-size: 15px;
+        }
+    
+        .menu {
+             float:left;
+             overflow:hidden;
+         }
+    
+         .menu .dropmenu {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+         }
+    
+         .menu-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+         }
+    
+         .menu-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+         }
+    
+         .menu:hover .menu-content {
+            display: block;
+            
+         }
+    
+         .menu:hover .dropmenu {
+            background-color: red;
+         } 
+         
+        
+        .navigation a:hover {
+        background-color: white;
+        color: black;
+    }
+    
+
+.star{
+color:red;
+font-size: 2.0 rem;
+padding:0 1 rem;
+
+}
+
+.star::before{
+content: '\2606';
+cursor: pointer;
+}
+
+.star.clicked::before{
+content: '\2605';
+}
+
+
+.stars{
+
+    counter-reset: rate 0;
+    font-size: 1.0rem;
+    font-weight: 900;
+    
+}
+
+.star.clicked{
+    counter-increment: rate 1;
+}
+
+.stars::after{
+    content: counter(rate) '/5';
+}
+
+input[type="submit"]
+{
+    color: white;
+    background-color: green;
+}
+.btn button
+{
+    color: white;
+    background-color: red;
+}
+
+
+ </style>
+
+    <body>
+        <h1><div id = "name"></div></h1>
+        <div id = "id"></div>
+        <br/>
+        <hr width = "20%" color = "white">
+        <h3>Steps</h3> <div id = "steps"></div>
+        <br/>
+        <hr width = "20%" color = "white">
+        <h3>Description</h3> <div id = "description"></div>
+        <br/>
+        <hr width = "20%" color = "white">
+        <h3>Ingredients</h3><div id = "ingredients"></div>
+        <br/>
+        <hr width = "20%" color = "white">
+        <h3>Nutrition</h3>
+        <p> calories,total-fat,sugar,sodium,protein,saturated fat,carbohydrates</p>
+        <div id = "nutrition"></div>
+        <br/>
+        <hr width = "20%" color = "white">
+
+        <br/><br/>
+          <!--Rating Recipe and Comment section-->
+       <h4>Rate This Recipe!</h4>
+       
+       <div class = "stars" data-rating = "1">
+       <span class = "star">&nbsp;</span>
+       <span class = "star">&nbsp;</span>
+       <span class = "star">&nbsp;</span>
+       <span class = "star">&nbsp;</span>
+       <span class = "star">&nbsp;</span>
+       </div>
+         
+      <div class="comments">
+      <h4>Leave a Comment About the Recipe!</h4>
+       <form><textarea id = "title" placeholder='Add Your Comment Here!'rows="3" cols="40"></textarea></form>
+        <div class="btn">
+          <input type="submit" value='Comment' onclick="insert()">
+          <button id='cancel' onclick="cancel()">Cancel</button>
+          <br>
+        </div>
+    <div id = "display" class = "commshow"></div>
+    </div>
+    
+    </body>
+   
+   <script>
+        //name,id,minutes,contributor_id,submitted,nutrition,n_steps,steps,description,ingredients,n_ingredients
+        var results = JSON.parse('{{ results | safe }}');
+        document.getElementById("name").innerText = results.name;
+        document.getElementById("id").innerText = "ID: " + results.id; 
+        document.getElementById("description").innerText = results.description;
+        document.getElementById("nutrition").innerText = results.nutrition;
+  
+    </script>
+
+    <script>
+        var steps ={{steps|safe}};
+        var ingredients = {{ingredients|safe}};
+        console.log(steps);
+        document.getElementById("steps").innerText = steps ;
+        document.getElementById("ingredients").innerText = ingredients;
+
+    </script>
+
+
+
+
+<!--This is for the star rating-->
+<script>
+
+    document.addEventListener('DOMContentLoaded', function(){
+        let stars = document.querySelectorAll('.star');
+        stars.forEach(function(star){
+            star.addEventListener('click', setRating); 
+        });
+        
+        let rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
+        let target = stars[rating - 1];
+        target.dispatchEvent(new MouseEvent('click'));
+    });
+
+    function setRating(ev){
+        let span = ev.currentTarget;
+        let stars = document.querySelectorAll('.star');
+        let match = false;
+        let number = 0;
+        stars.forEach(function(star, index){
+            if(match){
+                star.classList.remove('clicked');
+            }else{
+                star.classList.add('clicked');
+            }
+      
+            if(star === span){
+                match = true;
+                number = index + 1;
+            }
+        });
+        document.querySelector('.stars').setAttribute('data-rating', number);
+    }
+    
+</script>
+
+<!--This is for Comment Box-->
+<script>
+    var titles = [];
+    var titleInput = document.getElementById("title");
+    var messageBox = document.getElementById("display");
+
+    function insert () {
+    titles.push(titleInput.value);
+    clearAndShow();
+    }
+
+    function cancel(){
+    titleInput.value = "";
+
+    }
+    function clearAndShow ()
+    {
+    titleInput.value = "";
+    messageBox.innerHTML = "";
+    messageBox.innerHTML += " " + titles.join("<br/> ") + "<br/>";
+    }
+</script>
+
+
+</html>
