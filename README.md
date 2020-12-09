@@ -12,9 +12,13 @@ Steven Joseph: sjose007@ucr.edu
 
 Terry Jung: tjung006@ucr.edu
 
+## Me (Michelle Dozal) Personally
+
+This project introduced me to a lot of different tools I hadn't worked before and also allowed me to work on my front-end skills and become more confident with them. Before this project I had not worked with more than 2 people on a project so it was a new experience to work with double that and somehow manage to meet up/discuss/work on the project together. Thus, following the Scrum process helped us a lot allowing us to have a set time to discuuss, plan, and execute. I personally worked the most on Front-end development team for the project and tended to focus on that. Allowed me to get more exposed to javascript and flask which I had little experience with.Overall, this project had it's challenges but very proud of what my group and I were able to put out.
+
 
 ## General
-This project was built an in-memory data store with a layered client-server architecture from scratch.The project will follow the ​Scrum​ software process, with six week-long sprints.
+This project was built an in-memory data store with a layered client-server architecture from scratch.The project followed the ​Scrum​ software process, with six week-long sprints.
 The data set is 
 [Click Here!](https://www.kaggle.com/shuyangli94/food-com-recipes-and-user-interactions?select=ingr_map.pkl)
 
